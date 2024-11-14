@@ -30,13 +30,28 @@ app.set("view engine", "ejs");
 // view engine - html ni data bn qoshib generate qberadigan template engine
 
 // *****4 - Rooting ga bogliq codelar********
-app.get("/hello", function(req, res) {
-    res.end(`<h1>HELLO WORLD by Thomas</h1>`);
-});
+// app.get("/hello", function(req, res) {
+//     res.end(`<h1>HELLO WORLD by Thomas</h1>`);
+// });
 
-app.get("/gift", function(req, res) {
-    res.end(`<h1>Siz sovgalar bolimidasiz</h1>`);
-});
+// app.get("/gift", function(req, res) {
+//     res.end(`<h1>Siz sovgalar bolimidasiz</h1>`);
+// });
+
+
+//get - databasedan malumotni olish uchun, post - ozi bn malumot obkeb database ga yozadi
+app.post("/create-item", (req, res) => {
+    console.log(req.body);
+    console.log(req);
+    res.json({ test: "success"} );
+})
+
+app.get("/", function(req, res) {
+    res.render("harid.ejs");
+})
+
+// request 3 qism: 1.url, 2. http request header(boshi), 3.body
+
 
 
 const server = http.createServer(app);
