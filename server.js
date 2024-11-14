@@ -11,7 +11,7 @@ app.use(express.static("public")); // harqande wrobserdan kirib kelekan request 
 // chrome expressga request qsa, public folder ni clientlaga ochib berebmz. kn cali styling sheta joylashadi: css, image
 app.use(express.json()); // kegan json formatdegi data ni obj ga ogirib beradi
 // client va webserver la orasidagi malumot, json format korinishida boladi
-app.use(express.urlencoded({extended: true})); 
+app.use(express.urlencoded({extended: true}));
 //html da form request(traditional request qilish instrument) i bor, htlm da POST qilingan narsalani qabul qilib oladi tepadegi kod
 
 // ********2 - Sessionga bogliq bolgan codelar*******
