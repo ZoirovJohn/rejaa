@@ -3,6 +3,16 @@ console.log('Web Serverni boshlash');
 const express = require("express"); // express module dan export qilingan express function
 const app = express(); // app - bu instinct, obj
 const http = require("http"); // core module
+const fs = require("fs"); // file system core module
+
+let user;
+fs.readFile("database/user.json", "utf8", (err, data) => {
+    if(err) {
+        console.log("Error: ", err);
+    } else {
+        user = JSON.parse(data);
+    }
+})
 
 // *****1 - Kirish codelari*******
 // Expressga kirib kelekan malumotlaga bogliq bolgan kodlar yoziladi
@@ -30,6 +40,7 @@ app.set("view engine", "ejs");
 // view engine - html ni data bn qoshib generate qberadigan template engine
 
 // *****4 - Rooting ga bogliq codelar********
+
 // app.get("/hello", function(req, res) {
 //     res.end(`<h1>HELLO WORLD by Thomas</h1>`);
 // });
@@ -43,7 +54,11 @@ app.set("view engine", "ejs");
 app.post("/create-item", (req, res) => {
     console.log(req.body);
     console.log(req);
-    res.json({ test: "success"} );
+    res.json({ test: "success" });
+})
+
+app.get("/author", (req, res) => {
+    res.render("harid", { user: user });
 })
 
 app.get("/", function(req, res) {
@@ -51,7 +66,6 @@ app.get("/", function(req, res) {
 })
 
 // request 3 qism: 1.url, 2. http request header(boshi), 3.body
-
 
 
 const server = http.createServer(app);
