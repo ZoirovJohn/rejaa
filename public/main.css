@@ -298,7 +298,7 @@
     position: relative;
     width: 220px;
     height: 153px;
-    margin-top: 25;
+    margin-top: 25px;
     margin-left: 45px;
     /* background-color: aqua; */
 }
@@ -414,17 +414,6 @@
     /* background-color: aqua; */
 }
 
-.main-frame .left-frame-5-skills {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    font-size: 15px;
-    font-weight: 400;
-    color: rgb(118, 118, 118);
-    position: relative;
-    
-   
-}
 .main-frame .left-5 .extra-skills-header {
     color: var(--Black, #2B2B2B);
 
@@ -435,6 +424,18 @@
     font-weight: 500;
     line-height: 123.6%; /* 22.248px */
     text-transform: capitalize;
+}
+
+.main-frame .left-frame-5-skills {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 400px;
+    color: rgb(118, 118, 118);
+    position: relative;
+    
+   
 }
 
 .main-frame .left-frame-5-skills img {
