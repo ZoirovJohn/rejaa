@@ -66,7 +66,7 @@ async function maslahatBering(a) {
             // }, 5000);
             setInterval(() => {
                 resolve(list[5]);
-            }, 1000)
+            }, 1000);
         })
         
     }
@@ -75,7 +75,7 @@ async function maslahatBering(a) {
 
 /*//then/catch
 console.log('passed here 0');
-maslahatBering(25)
+maslahatBering(35)
     .then((data) => {
         console.log("Javob:", data);
 })
