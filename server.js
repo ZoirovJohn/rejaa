@@ -2,7 +2,7 @@ const http = require("http");
 const mongodb = require("mongodb");
 
 let db;
-const connectionString = "mongodb+srv://zoirovjohn:sMpaXWDwVGW8UktI@cluster0.ywejv.mongodb.net/";
+const connectionString = "mongodb+srv://zoirovjohn:sMpaXWDwVGW8UktI@cluster0.ywejv.mongodb.net/Reja?authSource=admin&retryWrites=true&w=majority";
 
 mongodb.connect(connectionString, {
     useNewUrlParser: true, 
@@ -13,7 +13,7 @@ mongodb.connect(connectionString, {
         console.log("MongoDB connection succeed");
         // console.log(client);
         module.exports = client;
-        
+
         const app = require("./app");
         const server = http.createServer(app);
         let PORT = 3000;

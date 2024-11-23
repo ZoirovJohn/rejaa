@@ -1,5 +1,5 @@
 console.log("TRAIN.js started working");
-// A-Task
+/*// A-Task
 
 function countLetter(letter, word) {
     let result = 0;
@@ -13,9 +13,20 @@ function countLetter(letter, word) {
 console.log(countLetter("e", "engineer"));
 console.log("TRAIN.js ended working");
 console.log("--------------------------------------------");
+*/
+// B-Task
 
+function countDigits(word) {
+    let result = 0;
+    for (const i of word) {
+        result += !isNaN(i) ? 1 : 0;
+    }
+    return result;
+}
+
+console.log(countDigits("ad2a54y79wet0sfgb9"));
 // -------------------------------------------------------------------------------------------
-
+/*
 console.log('Jack Ma maslahatlari');
 const list = [
     "yaxshi talaba bo'ling", // 0–20
@@ -25,7 +36,7 @@ const list = [
     "yoshlarga investitsiya qiling", // 50–60
     "endi dam oling, foydasi yo'q endi", // 60
 ];
-
+*/
 /*//callback
 function maslahatBering(a, callback) {
     if(typeof a !== "number") callback("insert a number", null); //callback(errror, data)
