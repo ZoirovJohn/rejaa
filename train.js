@@ -14,7 +14,7 @@ console.log(countLetter("e", "engineer"));
 console.log("TRAIN.js ended working");
 console.log("--------------------------------------------");
 */
-// B-Task
+/*// B-Task
 
 function countDigits(word) {
     let result = 0;
@@ -25,6 +25,33 @@ function countDigits(word) {
 }
 
 console.log(countDigits("ad2a54y79wet0sfgb9"));
+*/
+// C-Task
+const moment = require("moment");
+const time = moment().format("hh:mm");
+console.log(time);
+class Shop {
+    constructor(a, b, c) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
+
+    qoldiq() {
+        console.log(`hozir ${self.time}da ${this.a}ta non, ${this.b}ta lagmon va ${this.c}ta cola mavjud!`);
+    }
+
+    sotish() {
+        console.log(`hozir ${self.time}da ${this.a}ta non, ${this.b}ta lagmon va ${this.c}ta cola mavjud!`);
+    }
+
+    qabul() {
+        console.log(`hozir ${self.time}da ${this.a}ta non, ${this.b}ta lagmon va ${this.c}ta cola mavjud!`);
+    }
+
+
+}
+
 // -------------------------------------------------------------------------------------------
 /*
 console.log('Jack Ma maslahatlari');

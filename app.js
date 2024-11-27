@@ -1,12 +1,12 @@
 console.log('Web Serverni boshlash');
-const express = require("express"); 
-const app = express(); 
+const express = require("express");
+const app = express();
 
 //MongoDB chaqirish
 const db = require("./server").db();
 
 // *****1 - Kirish codelari*******
-app.use(express.static("public")); app.use(express.json());
+app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
@@ -14,26 +14,24 @@ app.use(express.urlencoded({extended: true}));
 // ********3 - Views ga bogliq codelar*********
 
 app.set("views", "views");
-app.set("view engine", "ejs"); 
+app.set("view engine", "ejs");
 
 // *****4 - Rooting ga bogliq codelar********
 app.post("/create-item", (req, res) => {
     console.log('user entered /create-item');
-    console.log(req.body);
+    // console.log(req.body);
     // res.end("success");
     const new_reja = req.body.reja;
     db.collection("plans").insertOne({reja: new_reja}, (err, data) => {
-        if(err) {
-            console.log(err);
-            res.end("Something went wrong")
-        } else {
-            res.end("Successfully added")
-        }
+        console.log(data.ops);
+        res.json(data.ops[0]);
     })
 })
 
 app.get("/", function(req, res) {
+    console.log("STEP2: Frontend => Backend");
     console.log('user entered /');
+    console.log("STEP3: Backend => Database");
     db.collection("plans")
     .find()
     .toArray((err, data) => {
@@ -42,7 +40,10 @@ app.get("/", function(req, res) {
             res.end("something went wrong");
         } else {
             // console.log(data);
+            console.log("STEP4: Database => Backend");
+            // console.log("data: ", data);
             res.render("reja", { items: data });
+            console.log("STEP5: DONE");
         }
     });
 })
