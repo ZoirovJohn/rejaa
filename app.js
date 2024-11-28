@@ -4,6 +4,7 @@ const app = express();
 
 //MongoDB chaqirish
 const db = require("./server").db();
+const new_mongodb = require("mongodb");
 
 // *****1 - Kirish codelari*******
 app.use(express.static("public"));
@@ -25,8 +26,18 @@ app.post("/create-item", (req, res) => {
     db.collection("plans").insertOne({reja: new_reja}, (err, data) => {
         console.log(data.ops);
         res.json(data.ops[0]);
-    })
-})
+    });
+});
+
+app.post("/delete-item", (req, res) => {
+    const id = req.body.id;
+    db.collection("plans").deleteOne(
+      {_id: new_mongodb.ObjectId(id)},
+        function(err, data) {
+          res.json({state: "success"});
+        }
+    );
+});
 
 app.get("/", function(req, res) {
     console.log("STEP2: Frontend => Backend");
@@ -46,7 +57,7 @@ app.get("/", function(req, res) {
             console.log("STEP5: DONE");
         }
     });
-})
+});
 
 
 module.exports = app;
