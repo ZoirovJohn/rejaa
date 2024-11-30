@@ -1,6 +1,16 @@
 console.log("TRAIN.js started working");
+// D-TASK
+function checkContent(word1, word2) {
+    const sorted_word1 = word1.split("").sort().join("");
+    const sorted_word2 = word2.split("").sort().join("");
+    console.log(sorted_word1 === sorted_word2);
+}
 
-// C-Task
+checkContent("mitgroup", "gmtiprou");
+
+// -------------------------------------------------------------------------------------------
+
+/*// C-Task
 const moment = require("moment");
 const time = moment().format("hh:mm");
 class Shop {
@@ -40,7 +50,19 @@ shop.qoldiq()
 shop.sotish('non', 3)
 shop.qabul('cola', 4)
 shop.qoldiq()
-// -------------------------------------------------------------------------------------------
+*/
+/*// B-Task
+
+function countDigits(word) {
+    let result = 0;
+    for (const i of word) {
+        result += !isNaN(i) ? 1 : 0;
+    }
+    return result;
+}
+
+console.log(countDigits("ad2a54y79wet0sfgb9"));
+*/
 /*// A-Task
 
 function countLetter(letter, word) {
@@ -55,16 +77,4 @@ function countLetter(letter, word) {
 console.log(countLetter("e", "engineer"));
 console.log("TRAIN.js ended working");
 console.log("--------------------------------------------");
-*/
-/*// B-Task
-
-function countDigits(word) {
-    let result = 0;
-    for (const i of word) {
-        result += !isNaN(i) ? 1 : 0;
-    }
-    return result;
-}
-
-console.log(countDigits("ad2a54y79wet0sfgb9"));
 */

@@ -32,12 +32,32 @@ app.post("/create-item", (req, res) => {
 app.post("/delete-item", (req, res) => {
     const id = req.body.id;
     db.collection("plans").deleteOne(
-      {_id: new_mongodb.ObjectId(id)},
+        {_id: new_mongodb.ObjectId(id)},
         function(err, data) {
-          res.json({state: "success"});
+            res.json({state: "success"});
         }
     );
 });
+
+app.post("/edit-item", (req, res) => {
+    console.log('user entered /edit-item');
+    const data = req.body;
+    console.log(data);
+    db.collection("plans").findOneAndUpdate(
+        { _id: new_mongodb.ObjectId(data.id) }, 
+        { $set: {reja: data.new_input} }, 
+        (err, data) => {
+            res.json({ state: "success" })
+        })
+});
+
+app.post("/delete-all", (req, res) => {
+    if(req.body.delete_all) {
+        db.collection("plans").deleteMany(function() {
+            res.json({ state: "hamma rejalar ochirildi" });
+        })
+    }
+})
 
 app.get("/", function(req, res) {
     console.log("STEP2: Frontend => Backend");
