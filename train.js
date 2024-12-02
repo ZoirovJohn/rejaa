@@ -1,5 +1,5 @@
 console.log("TRAIN.js started working");
-// D-TASK
+/*// D-TASK
 function checkContent(word1, word2) {
     const sorted_word1 = word1.split("").sort().join("");
     const sorted_word2 = word2.split("").sort().join("");
@@ -7,7 +7,20 @@ function checkContent(word1, word2) {
 }
 
 checkContent("mitgroup", "gmtiprou");
+*/
 
+
+function blabla (soz1, soz2) {
+    const yangi_taxlangan_soz1 = soz1.split("").sort().join("");
+    const yangi_taxlangan_soz2 = soz2.split("").sort().join("");
+
+    const tekshirgandegi_kegan_javob = yangi_taxlangan_soz1 === yangi_taxlangan_soz2;
+    console.log("Tekshirgandegi_kegan_javob: ", tekshirgandegi_kegan_javob);
+}
+
+// blabla("Azizbek", "kebzizA")
+console.log("Azizbek".toUpperCase())
+console.log("AZIZbek".toUpperCase())
 // -------------------------------------------------------------------------------------------
 
 /*// C-Task

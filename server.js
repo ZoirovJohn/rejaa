@@ -13,10 +13,11 @@ mongodb.connect(connectionString, {
         console.log("MongoDB connection succeed");
         // console.log(client);
         module.exports = client;
+        // console.log(client); 
 
         const app = require("./app");
         const server = http.createServer(app);
-        let PORT = 3000;
+        let PORT = 6005;
         server.listen(PORT, function() {
             console.log(`The server is running successfully on port: ${PORT}, http://localhost:${PORT}`)
         })

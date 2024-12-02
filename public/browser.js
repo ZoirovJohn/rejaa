@@ -34,6 +34,7 @@ document
                     .insertAdjacentHTML("beforeend", itemTemplate(response.data))
                 createField.value = "";
                 createField.focus();
+                console.log(response.data);
             })
             .catch((err) => {
                 console.log("Iltimos qaytadan harakat qiling!");
