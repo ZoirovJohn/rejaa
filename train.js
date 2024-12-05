@@ -1,5 +1,17 @@
 console.log("TRAIN.js started working");
-// D-TASK
+// F-TASK
+
+function findDoublers(word) {
+    const arr = word.split("").sort();
+    for (let i=1; i < arr.length; i++) {
+        if ((arr[i] === arr[i-1]) == true) { console.log(true); break; }
+    }
+}
+
+findDoublers("hello");
+// -------------------------------------------------------------------------------------------
+
+/*// E-TASK
 function getReverse(word) {
     const reversed_word = word.split("").reverse().join("");
     console.log(reversed_word);
@@ -7,8 +19,7 @@ function getReverse(word) {
 }
 
 getReverse("hello");
-
-// -------------------------------------------------------------------------------------------
+*/
 /*// D-TASK
 function checkContent(word1, word2) {
     const sorted_word1 = word1.split("").sort().join("");
