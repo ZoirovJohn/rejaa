@@ -2,25 +2,31 @@ const http = require("http");
 const mongodb = require("mongodb");
 
 let db;
-const connectionString = "mongodb+srv://zoirovjohn:sMpaXWDwVGW8UktI@cluster0.ywejv.mongodb.net/Reja?authSource=admin&retryWrites=true&w=majority";
+const connectionString =
+  "mongodb+srv://zoirovjohn:sMpaXWDwVGW8UktI@cluster0.ywejv.mongodb.net/Reja";
 
-mongodb.connect(connectionString, {
-    useNewUrlParser: true, 
-    useUnifiedTopology: true
-}, (err, client) => {
-    if(err) console.log("ERROR:", err);
+mongodb.connect(
+  connectionString,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  },
+  (err, client) => {
+    if (err) console.log("ERROR:", err);
     else {
-        console.log("MongoDB connection succeed");
-        // console.log(client);
-        module.exports = client;
-        // console.log(client); 
+      console.log("MongoDB connection succeed");
+      // console.log(client);
+      module.exports = client;
+      // console.log(client);
 
-        const app = require("./app");
-        const server = http.createServer(app);
-        let PORT = 6005;
-        server.listen(PORT, function() {
-            console.log(`The server is running successfully on port: ${PORT}, http://localhost:${PORT}`)
-        })
+      const app = require("./app");
+      const server = http.createServer(app);
+      let PORT = 6005;
+      server.listen(PORT, function () {
+        console.log(
+          `The server is running successfully on port: ${PORT}, http://localhost:${PORT}`
+        );
+      });
     }
-});
-
+  }
+);
